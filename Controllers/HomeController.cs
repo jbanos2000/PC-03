@@ -23,7 +23,7 @@ namespace PC_03.Controllers
         public IActionResult Index()
         {
             var productos = _context.Productos.ToList();
-            return View();
+            return View(productos);
         }
          public IActionResult Producto()
         {
@@ -36,6 +36,7 @@ namespace PC_03.Controllers
             if(ModelState.IsValid){
                 _context.Add(p);
                 _context.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             return View(p);
