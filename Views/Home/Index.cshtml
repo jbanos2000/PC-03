@@ -3,14 +3,14 @@
     ViewData["Title"] = "Solicitudes de productos añadidas";
 }
 
-<div class="text-center" style="margin-top: 25px;">
+<div class="text-center" style="margin-top: 45px;">
     <h1 class="display-4">Solicitudes de productos registradas</h1>
 </div>
 
 <div style="margin-top: 30px; text-align: center;">
     @if (Model.Count == 0)
     {
-        <strong style="color: red;">No se han obtenido datos de registro de productos</strong>
+        <strong style="color: red;">Aún no se han obtenido datos de registro de productos</strong>
     }
 </div>
 
@@ -32,7 +32,7 @@
                             <li class="list-group-item"><strong>Usuario: </strong>@producto.usuario</li>
                         </ul>
                         <div class="card-body" style="text-align: center;">
-                            <form action="/Home/Eliminar" method="POST">
+                            <form action="/Producto/Eliminar" method="POST">
                                 <input type="hidden" name="Id" value="@producto.id">
                                 <button class="btn btn-danger">Eliminar</button>
                             </form>
