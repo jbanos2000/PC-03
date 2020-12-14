@@ -1,8 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Producto>
+@{
+    ViewData["Title"] = "Solicitudes de productos añadidas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center" style="margin-top: 25px;">
+    <h1 class="display-4">Solicitudes de productos registradas</h1>
+</div>
+
+<div style="margin-top: 30px; text-align: center;">
+    @if (Model.Count == 0)
+    {
+        <strong style="color: red;">No se han obtenido datos de registro de productos</strong>
+    }
+</div>
+
+<div style="margin-top: 30px;">
+    <div class="row">
+        @foreach (var producto in Model)
+        {
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                    <img src="@producto.url_producto" class="card-img-top">
+                        <div class="card-body" style="text-align: center; margin-top: 10px;">
+                            <h5 class="card-title">@producto.nombre</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Descripción: </strong>@producto.descripcion</li>
+                            <li class="list-group-item"><strong>Precio: </strong>@producto.precio</li>
+                            <li class="list-group-item"><strong>Celular: </strong>@producto.celular</li>
+                            <li class="list-group-item"><strong>Lugar: </strong>@producto.lugarcompraproducto</li>
+                            <li class="list-group-item"><strong>Usuario: </strong>@producto.usuario</li>
+                        </ul>
+                        <div class="card-body" style="text-align: center;">
+                            <form action="/Home/Eliminar" method="POST">
+                                <input type="hidden" name="Id" value="@producto.id">
+                                <button class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
