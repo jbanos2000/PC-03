@@ -22,7 +22,19 @@ namespace PC_03.Controllers
         {
             return View();
         }
+         public IActionResult Producto()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult Producto(Producto p)
+        {
+            if(ModelState.IsValid){
+                return RedirectToAction("Index");
+            }
+            return View(p);
+        }
         public IActionResult Privacy()
         {
             return View();
