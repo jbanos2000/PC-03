@@ -41,11 +41,7 @@ namespace PC_03.Controllers
             }
             return View(p);
         }
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        
          [HttpPost]
         public IActionResult Eliminar(int id)
         {
