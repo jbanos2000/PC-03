@@ -34,5 +34,8 @@ namespace PC_03.Models
         [Required(ErrorMessage="¡Espacio en blanco, Ingrese un usuario!")]
         [Display(Name="Nombre del usuario")]
         public string usuario { get; set; }
+
+        [Required]
+        public DateTime addDate { get; set; }
     }
 }

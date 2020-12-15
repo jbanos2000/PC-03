@@ -39,7 +39,7 @@ namespace PC_03.Controllers
             if(ModelState.IsValid){
                 _context.Add(p);
                 _context.SaveChanges();
-
+                 Console.WriteLine("Producto añadido");
                 return RedirectToAction("Busco");
             }
             return View(p);
