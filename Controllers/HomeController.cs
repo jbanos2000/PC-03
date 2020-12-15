@@ -20,12 +20,15 @@ namespace PC_03.Controllers
             _context = context;
         }
         public IActionResult Busco()
-        {
+        { 
+
             var productos = _context.Productos.ToList();
             return View(productos);
         }
         public IActionResult Index()
         {
+            DateTime fecha= DateTime.Today.AddDays(-7);
+            var productos = _context.Productos.Where(p => p.addDate == fecha).ToList();
             return View();
         }
          public IActionResult Producto()
