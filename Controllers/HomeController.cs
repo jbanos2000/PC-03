@@ -19,7 +19,10 @@ namespace PC_03.Controllers
             _logger = logger;
             _context = context;
         }
-
+        public IActionResult Busco()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             var productos = _context.Productos.ToList();
