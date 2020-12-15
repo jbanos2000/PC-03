@@ -12,7 +12,6 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
         <a  asp-controller="Index" asp-action="Index" style="margin-bottom: 5px;"><img src="https://okhosting.com/resources/uploads/2016/01/cerar-una-tienda-online-1024x917@2x.jpg"  width="85" height="85" style="margin-left: 10px;"></a>
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Busco">Busco</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,10 +19,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Producto">Productos</a>
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Busco">Registro de Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Producto">Agregar Productos</a>
                         </li>
                     </ul>
                 </div>

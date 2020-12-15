@@ -21,12 +21,12 @@ namespace PC_03.Controllers
         }
         public IActionResult Busco()
         {
-            return View();
+            var productos = _context.Productos.ToList();
+            return View(productos);
         }
         public IActionResult Index()
         {
-            var productos = _context.Productos.ToList();
-            return View(productos);
+            return View();
         }
          public IActionResult Producto()
         {
@@ -40,7 +40,7 @@ namespace PC_03.Controllers
                 _context.Add(p);
                 _context.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Busco");
             }
             return View(p);
         }
@@ -51,7 +51,7 @@ namespace PC_03.Controllers
             var productos = _context.Productos.FirstOrDefault(p => p.id == id);
             _context.Remove(productos);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Busco");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
